@@ -84,6 +84,21 @@ Before creating, verify the memory passes the atomicity test:
    ```
 5. **Execute** the curation plan after user confirms
 6. **Report** the result including any auto-linked memories
+7. **Review auto-links** - Check if auto-linked memories are relevant:
+   ```
+   Auto-linked memories:
+   - #102: "Database connection pooling" - Relevant? (keep)
+   - #87: "Unrelated old pattern" - Not relevant (will unlink)
+
+   Unlinking irrelevant auto-links...
+   ```
+   Use `unlink_memories` to remove irrelevant connections:
+   ```
+   execute_forgetful_tool("unlink_memories", {
+     "source_id": NEW_MEMORY_ID,
+     "target_id": IRRELEVANT_MEMORY_ID
+   })
+   ```
 
 ## If Content is Too Long
 

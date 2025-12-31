@@ -40,6 +40,27 @@ This will:
 2. Configure Forgetful MCP server
 3. Report setup status
 
+## Skills
+
+Context Hub includes auto-discovered skills that guide Claude on effective tool usage:
+
+### Forgetful Skills (included)
+| Skill | Description |
+|-------|-------------|
+| `using-forgetful-memory` | When/how to query and create memories, atomic memory principles, importance scoring |
+| `curating-memories` | Updating, linking, and marking memories obsolete |
+| `exploring-knowledge-graph` | Deep traversal across memories, entities, and relationships |
+
+### Serena Skills
+| Skill | Description |
+|-------|-------------|
+| `using-serena-symbols` | When to use Serena vs grep, symbol path notation, core tools |
+| `serena-code-architecture` | Multi-phase architectural analysis workflow with Forgetful integration |
+
+Skills are automatically invoked by Claude when relevant to your task. They include:
+- **Tool Quick Reference** - Call Forgetful tools directly without meta-tool discovery
+- **TOOL_REFERENCE.md** - Complete schemas for all 38 Forgetful tools
+
 ## Commands
 
 ### Context Retrieval
@@ -111,11 +132,24 @@ Stores findings as atomic memories in Forgetful for future retrieval.
 ## Architecture
 
 ```
-context-hub-plugin
-├── Forgetful (MCP) ─── Semantic memory storage
-├── Serena (Plugin) ─── Symbol-level code analysis
-└── Context7 (Plugin) ─ Framework documentation
+context-hub-plugin (self-contained)
+├── skills/
+│   ├── using-forgetful-memory/  ─── Memory usage + Tool Reference
+│   ├── curating-memories/       ─── Memory maintenance
+│   ├── exploring-knowledge-graph/ ─ Graph traversal
+│   ├── using-serena-symbols/    ─── Symbol analysis guidance
+│   └── serena-code-architecture/ ── Architecture workflows
+├── commands/
+│   ├── context_gather.md        ─── Multi-source context retrieval
+│   ├── encode-repo-serena.md    ─── Repository encoding
+│   └── memory-*.md              ─── Memory management
+└── Integrations
+    ├── Forgetful (MCP)          ─── Semantic memory storage
+    ├── Serena (Plugin)          ─── Symbol-level code analysis
+    └── Context7 (Plugin)        ─── Framework documentation
 ```
+
+**Note**: Context Hub is self-contained - you don't need to install forgetful-plugin separately. All Forgetful skills are included.
 
 ## Part of forgetful-plugins
 
