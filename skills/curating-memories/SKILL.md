@@ -1,7 +1,6 @@
 ---
 name: curating-memories
-description: Guidance for maintaining memory quality through curation. Covers updating outdated memories, marking obsolete content, and linking related knowledge. Use when memories need modification, when new information supersedes old, or when building knowledge graph connections.
-allowed-tools: mcp__forgetful__discover_forgetful_tools, mcp__forgetful__how_to_use_forgetful_tool, mcp__forgetful__execute_forgetful_tool
+description: Use when creating new memories to check for duplicates first, when discovering outdated information that should be marked obsolete, when new decisions supersede old ones, or when building connections between related knowledge in Forgetful MCP (mcp__forgetful__* tools).
 ---
 
 # Curating Memories

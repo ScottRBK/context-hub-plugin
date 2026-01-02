@@ -1,7 +1,6 @@
 ---
 name: exploring-knowledge-graph
-description: Guidance for deep knowledge graph traversal across memories, entities, and relationships. Use when needing comprehensive context before planning, investigating connections between concepts, or answering "what do you know about X" questions.
-allowed-tools: mcp__forgetful__discover_forgetful_tools, mcp__forgetful__how_to_use_forgetful_tool, mcp__forgetful__execute_forgetful_tool
+description: Use when user asks "what do you know about X", when planning complex work that spans multiple topics, when investigating how concepts connect across projects, or when simple memory queries don't provide enough context. Deep traversal of Forgetful MCP knowledge graph (mcp__forgetful__* tools).
 ---
 
 # Exploring the Knowledge Graph
